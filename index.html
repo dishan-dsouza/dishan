@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dishan Vinoy D'Souza - Audit Assistant & Finance Professional Portfolio">
+    <meta name="keywords" content="Audit, Finance, Accounting, CMA, Tax, GST, TDS, ITR">
+    <title>Dishan Vinoy D'Souza | Finance & Audit Professional</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        :root {
+            --navy-blue: #0a1628;
+            --royal-blue: #1e40af;
+            --light-blue: #3b82f6;
+            --accent-blue: #60a5fa;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #0a1628 0%, #1e3a5f 50%, #1e40af 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #60a5fa, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(30, 64, 175, 0.15);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(30, 64, 175, 0.4);
+        }
+        
+        .btn-secondary {
+            border: 2px solid #3b82f6;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: #3b82f6;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #3b82f6;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -41px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+        }
+        
+        .skill-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .skill-card:hover {
+            border-color: #3b82f6;
+            background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .hero-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233b82f6' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <a href="#hero" class="text-xl font-bold text-blue-400">
+                    <span class="text-blue-400">D</span>VD
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="nav-link text-white/90 hover:text-white text-sm font-medium">About</a>
+                    <a href="#experience" class="nav-link text-white/90 hover:text-white text-sm font-medium">Experience</a>
+                    <a href="#education" class="nav-link text-white/90 hover:text-white text-sm font-medium">Education</a>
+                    <a href="#skills" class="nav-link text-white/90 hover:text-white text-sm font-medium">Skills</a>
+                    <a href="#projects" class="nav-link text-white/90 hover:text-white text-sm font-medium">Projects</a>
+                    <a href="#contact" class="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-medium transition-all">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="menuBtn" class="md:hidden text-white text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-72 h-full bg-[#0a1628] z-50 shadow-2xl">
+        <div class="p-6">
+            <button id="closeMenu" class="absolute top-4 right-4 text-white text-2xl">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="mt-12 flex flex-col space-y-6">
+                <a href="#about" class="text-white/90 hover:text-white text-lg font-medium mobile-link">About</a>
+                <a href="#experience" class="text-white/90 hover:text-white text-lg font-medium mobile-link">Experience</a>
+                <a href="#education" class="text-white/90 hover:text-white text-lg font-medium mobile-link">Education</a>
+                <a href="#skills" class="text-white/90 hover:text-white text-lg font-medium mobile-link">Skills</a>
+                <a href="#projects" class="text-white/90 hover:text-white text-lg font-medium mobile-link">Projects</a>
+                <a href="#contact" class="bg-blue-500 hover:bg-blue-600 text-white px-5 py-3 rounded-full text-lg font-medium text-center transition-all mobile-link">Contact</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Hero Section -->
+    <section id="hero" class="gradient-bg hero-pattern min-h-screen flex items-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#0a1628]/50"></div>
+        
+        <!-- Decorative Elements -->
+        <div class="absolute top-20 right-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl floating"></div>
+        <div class="absolute bottom-20 left-10 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl floating" style="animation-delay: -3s;"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left">
+                    <div class="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+                        <span class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+                        <span class="text-Black-200 text-sm">Available for Opportunities</span>
+                    </div>
+                    
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-blue-400 leading-tight mb-4">
+                        Dishan Vinoy<br>
+                        <span class="gradient-text">D'Souza</span>
+                    </h1>
+                    
+                    <h2 class="text-xl md:text-2xl text-Black-200 font-medium mb-6">
+                        Audit Assistant | Finance & Accounting Professional
+                    </h2>
+                    
+                    <p class="text-Black-200 text-lg mb-8 max-w-xl mx-auto lg:mx-0">
+                        "Detail-oriented audit and accounting professional ensuring accuracy, compliance, and financial clarity."
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+    <a href="resume.pdf" download="Dishan_Vinoy_DSouza_Resume" class="btn-primary text-white px-8 py-3 rounded-full font-medium inline-flex items-center">
+        <i class="fas fa-download mr-2"></i>
+        Download Resume
+         
+                        </a>
+                        <a href="https://www.linkedin.com/in/dishandsouza/" target="_blank" class="btn-secondary text-blue-400 px-8 py-3 rounded-full font-medium inline-flex items-center">
+                            <i class="fab fa-linkedin mr-2"></i>
+                            LinkedIn
+                        </a>
+                        <a href="#contact" class="bg-white/10 backdrop-blur-sm text-white px-8 py-3 rounded-full font-medium hover:bg-white/20 transition-all inline-flex items-center">
+                            <i class="fas fa-envelope mr-2"></i>
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hidden lg:flex justify-center">
+                    <div class="relative">
+                        <div class="w-80 h-80 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center shadow-2xl">
+                            <div class="w-72 h-72 bg-[#0a1628] rounded-full flex items-center justify-center">
+                                <i class="fas fa-chart-line text-8xl text-blue-400"></i>
+                            </div>
+                        </div>
+                        <div class="absolute -top-4 -right-4 bg-white rounded-xl p-4 shadow-lg floating">
+                            <i class="fas fa-file-invoice-dollar text-blue-500 text-2xl"></i>
+                        </div>
+                        <div class="absolute -bottom-4 -left-4 bg-white rounded-xl p-4 shadow-lg floating" style="animation-delay: -2s;">
+                            <i class="fas fa-calculator text-blue-500 text-2xl"></i>
+                        </div>
+                        <div class="absolute top-1/2 -right-8 bg-white rounded-xl p-4 shadow-lg floating" style="animation-delay: -4s;">
+                            <i class="fas fa-balance-scale text-blue-500 text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/60 animate-bounce">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="fade-in">
+                <div class="text-center mb-16">
+                    <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Get to Know Me</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">About Me</h2>
+                    <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto mt-4 rounded-full"></div>
+                </div>
+                
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="relative">
+                        <div class="bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl p-8 text-white">
+                            <div class="flex items-center mb-6">
+                                <i class="fas fa-map-marker-alt text-2xl mr-4"></i>
+                                <div>
+                                    <p class="text-blue-200 text-sm">Location</p>
+                                    <p class="font-semibold">Kasaragod, Kerala, India</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center mb-6">
+                                <i class="fas fa-building text-2xl mr-4"></i>
+                                <div>
+                                    <p class="text-blue-200 text-sm">Current Position</p>
+                                    <p class="font-semibold">Audit Assistant</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-briefcase text-2xl mr-4"></i>
+                                <div>
+                                    <p class="text-blue-200 text-sm">Company</p>
+                                    <p class="font-semibold">Gonsalves & Nayak Chartered Accountants, Mangalore</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 w-full h-full bg-blue-200 rounded-2xl -z-10"></div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Finance & Audit Professional</h3>
+                        <div class="space-y-4 text-gray-600">
+                            <p class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                                Extensive experience in audit, taxation, accounting, and compliance management
+                            </p>
+                            <p class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                                Strong attention to detail with an analytical mindset for problem-solving
+                            </p>
+                            <p class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                                Hands-on experience handling real-world client data and statutory filings
+                            </p>
+                            <p class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
+                                CMA (USA) certified professional with comprehensive financial expertise
+                            </p>
+                        </div>
+                        
+                        <div class="grid grid-cols-3 gap-4 mt-8">
+                            <div class="text-center p-4 bg-white rounded-xl shadow-sm">
+                                <p class="text-3xl font-bold text-blue-600">1000+</p>
+                                <p class="text-gray-500 text-sm">Transactions Reviewed</p>
+                            </div>
+                            <div class="text-center p-4 bg-white rounded-xl shadow-sm">
+                                <p class="text-3xl font-bold text-blue-600">2+</p>
+                                <p class="text-gray-500 text-sm">Years Experience</p>
+                            </div>
+                            <div class="text-center p-4 bg-white rounded-xl shadow-sm">
+                                <p class="text-3xl font-bold text-blue-600">CMA</p>
+                                <p class="text-gray-500 text-sm">USA Certified</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="fade-in">
+                <div class="text-center mb-16">
+                    <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Career Journey</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Professional Experience</h2>
+                    <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto mt-4 rounded-full"></div>
+                </div>
+                
+                <div class="max-w-4xl mx-auto">
+                    <div class="relative border-l-2 border-blue-200 pl-10 space-y-12">
+                        <!-- Experience 1 -->
+                        <div class="timeline-item relative card-hover bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+                            <div class="flex flex-wrap items-center justify-between mb-4">
+                                <h3 class="text-xl font-bold text-gray-900">Audit Assistant</h3>
+                                <span class="bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-sm font-medium">Apr 2025 – Present</span>
+                            </div>
+                            <p class="text-blue-600 font-medium mb-4">
+                                <i class="fas fa-building mr-2"></i>
+                                Gonsalves & Nayak Chartered Accountants, Mangalore
+                            </p>
+                            <ul class="space-y-3 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-chevron-right text-blue-500 mt-1 mr-3 text-sm"></i>
+                                    Reviewed and verified 1000+ financial transactions for accuracy and compliance
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-chevron-right text-blue-500 mt-1 mr-3 text-sm"></i>
+                                    Assisted in tax audits and statutory compliance procedures
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-chevron-right text-blue-500 mt-1 mr-3 text-sm"></i>
+                                    Filed ITR-7, GSTR-1, GSTR-3B, GSTR-9, and TDS returns
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-chevron-right text-blue-500 mt-1 mr-3 text-sm"></i>
+                                    Prepared financial statements and comprehensive audit documentation
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Experience 2 -->
+                        <div class="timeline-item relative card-hover bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+                            <div class="flex flex-wrap items-center justify-between mb-4">
+                                <h3 class="text-xl font-bold text-gray-900">Accountant</h3>
+                                <span class="bg-gray-100 text-gray-700 px-4 py-1 rounded-full text-sm font-medium">Jun 2023 – Jan 2025</span>
+                            </div>
+                            <p class="text-blue-600 font-medium mb-4">
+                                <i class="fas fa-building mr-2"></i>
+                                Kannur Hardwares, Kannur
+                            </p>
+                            <ul class="space-y-3 text-gray-600">
+                                <li class="flex items-start">
+                                    <i class="fas fa-chevron-right text-blue-500 mt-1 mr-3 text-sm"></i>
+                                    Managed daily cash, billing, receipts, and payments operations
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-chevron-right text-blue-500 mt-1 mr-3 text-sm"></i>
+                                    Maintained books of accounts including cash book, ledger, and stock records
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-chevron-right text-blue-500 mt-1 mr-3 text-sm"></i>
+                                    Performed bank reconciliation and assisted in monthly closing activities
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="fade-in">
+                <div class="text-center mb-16">
+                    <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Academic Background</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Education</h2>
+                    <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto mt-4 rounded-full"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <!-- CMA USA -->
+                    <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-gray-100 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/10 to-blue-600/10 rounded-bl-full"></div>
+                        <div class="relative z-10">
+                            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6">
+                                <i class="fas fa-award text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">CMA (USA)</h3>
+                            <p class="text-blue-600 font-medium mb-3">Institute of Management Accountants</p>
+                            <div class="flex items-center text-gray-500 mb-4">
+                                <i class="fas fa-calendar-alt mr-2"></i>
+                                Qualified: April 2025
+                            </div>
+                            <span class="inline-flex items-center bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium">
+                                <i class="fas fa-check-circle mr-2"></i>
+                                Certified
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <!-- B.Com -->
+                    <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border border-gray-100 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/10 to-blue-600/10 rounded-bl-full"></div>
+                        <div class="relative z-10">
+                            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6">
+                                <i class="fas fa-graduation-cap text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Bachelor of Commerce (B.Com)</h3>
+                            <p class="text-blue-600 font-medium mb-3">Specialization: Co-operation</p>
+                            <div class="flex items-center text-gray-500 mb-2">
+                                <i class="fas fa-university mr-2"></i>
+                                Kannur University
+                            </div>
+                            <div class="flex items-center text-gray-500">
+                                <i class="fas fa-calendar-alt mr-2"></i>
+                                Graduated: 2023
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="fade-in">
+                <div class="text-center mb-16">
+                    <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">What I Do Best</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Skills & Expertise</h2>
+                    <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto mt-4 rounded-full"></div>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Skill 1 -->
+                    <div class="skill-card card-hover rounded-xl p-6 text-center transition-all">
+                        <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-calculator text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-gray-900">Tally Prime</h3>
+                    </div>
+                    
+                    <!-- Skill 2 -->
+                    <div class="skill-card card-hover rounded-xl p-6 text-center transition-all">
+                        <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-file-excel text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-gray-900">MS Excel</h3>
+                    </div>
+                    
+                    <!-- Skill 3 -->
+                    <div class="skill-card card-hover rounded-xl p-6 text-center transition-all">
+                        <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-book text-purple-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-gray-900">Accounting & Bookkeeping</h3>
+                    </div>
+                    
+                    <!-- Skill 4 -->
+                    <div class="skill-card card-hover rounded-xl p-6 text-center transition-all">
+                        <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-file-invoice text-orange-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-gray-900">Taxation (GST, TDS, ITR)</h3>
+                    </div>
+                    
+                    <!-- Skill 5 -->
+                    <div class="skill-card card-hover rounded-xl p-6 text-center transition-all">
+                        <div class="w-14 h-14 bg-teal-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-chart-bar text-teal-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-gray-900">Financial Statement Preparation</h3>
+                    </div>
+                    
+                    <!-- Skill 6 -->
+                    <div class="skill-card card-hover rounded-xl p-6 text-center transition-all">
+                        <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-search-dollar text-red-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-gray-900">Audit & Compliance</h3>
+                    </div>
+                    
+                    <!-- Skill 7 -->
+                    <div class="skill-card card-hover rounded-xl p-6 text-center transition-all">
+                        <div class="w-14 h-14 bg-indigo-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-database text-indigo-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-gray-900">Data Entry & Cleansing</h3>
+                    </div>
+                    
+                    <!-- Skill 8 -->
+                    <div class="skill-card card-hover rounded-xl p-6 text-center transition-all">
+                        <div class="w-14 h-14 bg-cyan-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-tasks text-cyan-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-gray-900">Financial Analysis</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects & Certifications Section -->
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="fade-in">
+                <div class="text-center mb-16">
+                    <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Portfolio</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Projects & Certifications</h2>
+                    <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto mt-4 rounded-full"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+                        <div class="h-48 bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
+                            <i class="fas fa-chart-pie text-white text-6xl opacity-80"></i>
+                        </div>
+                        <div class="p-6">
+                            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-medium">Project</span>
+                            <h3 class="text-lg font-bold text-gray-900 mt-3 mb-2">Co-operative Bank Performance Analysis</h3>
+                            <p class="text-gray-600 text-sm">Analyzed 100+ transactions and prepared comprehensive performance report for cooperative banking sector.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Certification -->
+                    <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+                        <div class="h-48 bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center">
+                            <i class="fas fa-certificate text-white text-6xl opacity-80"></i>
+                        </div>
+                        <div class="p-6">
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-medium">Certification</span>
+                            <h3 class="text-lg font-bold text-gray-900 mt-3 mb-2">Tally Prime with GST</h3>
+                            <p class="text-gray-600 text-sm">TEPL Certification - Comprehensive training in Tally Prime software with GST compliance and reporting.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Freelance -->
+                    <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+                        <div class="h-48 bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center">
+                            <i class="fas fa-laptop-code text-white text-6xl opacity-80"></i>
+                        </div>
+                        <div class="p-6">
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Freelance</span>
+                            <h3 class="text-lg font-bold text-gray-900 mt-3 mb-2">Data Entry & Cleansing</h3>
+                            <p class="text-gray-600 text-sm">Professional freelance data entry and cleansing services with focus on accuracy and quality assurance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Languages Section -->
+    <section id="languages" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="fade-in">
+                <div class="text-center mb-12">
+                    <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Communication</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Languages</h2>
+                    <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto mt-4 rounded-full"></div>
+                </div>
+                
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span class="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-3 rounded-full font-medium text-lg shadow-lg shadow-blue-500/30">
+                        <i class="fas fa-language mr-2"></i>English
+                    </span>
+                    <span class="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-3 rounded-full font-medium text-lg shadow-lg shadow-orange-500/30">
+                        <i class="fas fa-language mr-2"></i>Hindi
+                    </span>
+                    <span class="bg-gradient-to-r from-green-500 to-teal-500 text-white px-8 py-3 rounded-full font-medium text-lg shadow-lg shadow-green-500/30">
+                        <i class="fas fa-language mr-2"></i>Malayalam
+                    </span>
+                    <span class="bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-8 py-3 rounded-full font-medium text-lg shadow-lg shadow-purple-500/30">
+                        <i class="fas fa-language mr-2"></i>Kannada
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 gradient-bg relative overflow-hidden">
+        <div class="absolute inset-0 hero-pattern opacity-50"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="fade-in">
+                <div class="text-center mb-16">
+                    <span class="text-blue-300 font-semibold text-sm uppercase tracking-wider">Get In Touch</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">Contact Me</h2>
+                    <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-blue-500 mx-auto mt-4 rounded-full"></div>
+                </div>
+                
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Contact Info -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-6">Let's Connect</h3>
+                        <p class="text-gray-300 mb-8">Feel free to reach out for professional opportunities, collaborations, or any queries. I'm always open to discussing finance, audit, and accounting topics.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center">
+                                <div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center mr-4">
+                                    <i class="fas fa-phone text-blue-400 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-400 text-sm">Phone</p>
+                                    <a href="tel:+919995989165" class="text-white font-medium hover:text-blue-400 transition-colors">+91 9995989165</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center mr-4">
+                                    <i class="fas fa-envelope text-blue-400 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-400 text-sm">Email</p>
+                                    <a href="mailto:dishandsouza18@hotmail.com" class="text-white font-medium hover:text-blue-400 transition-colors">dishandsouza18@hotmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center mr-4">
+                                    <i class="fab fa-linkedin text-blue-400 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-400 text-sm">LinkedIn</p>
+                                    <a href="https://linkedin.com" target="_blank" class="text-white font-medium hover:text-blue-400 transition-colors">Connect on LinkedIn</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center mr-4">
+                                    <i class="fas fa-map-marker-alt text-blue-400 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-400 text-sm">Location</p>
+                                    <p class="text-white font-medium">Kasaragod, Kerala, India</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Form -->
+                    <div class="bg-white rounded-2xl p-8 shadow-2xl">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Send a Message</h3>
+                        <form id="contactForm" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
+                                <input type="text" id="name" name="name" required 
+                                    class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 transition-all"
+                                    placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                                <input type="email" id="email" name="email" required 
+                                    class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 transition-all"
+                                    placeholder="john@example.com">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Your Message</label>
+                                <textarea id="message" name="message" rows="4" required 
+                                    class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 transition-all resize-none"
+                                    placeholder="Write your message here..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full btn-primary text-white py-4 rounded-xl font-medium text-lg">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Send Message
+                            </button>
+                        </form>
+                        <div id="formMessage" class="hidden mt-4 p-4 rounded-xl text-center"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-[#050d18] py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-center md:text-left mb-4 md:mb-0">
+                    <a href="#hero" class="text-xl font-bold text-white">
+                        <span class="text-blue-400">D</span>VD
+                    </a>
+                    <p class="text-gray-400 text-sm mt-2">Finance & Audit Professional</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="https://linkedin.com" target="_blank" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="mailto:dishandsouza18@hotmail.com" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                    <a href="tel:+919995989165" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <i class="fas fa-phone text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400 text-sm">© 2025 Dishan Vinoy D'Souza. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 z-40">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('bg-[#0a1628]/95', 'backdrop-blur-md', 'shadow-lg');
+                navbar.classList.remove('bg-transparent');
+            } else {
+                navbar.classList.remove('bg-[#0a1628]/95', 'backdrop-blur-md', 'shadow-lg');
+                navbar.classList.add('bg-transparent');
+            }
+        });
+        
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const closeMenu = document.getElementById('closeMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+        
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // Fade in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        fadeElements.forEach(el => observer.observe(el));
+        
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.remove('opacity-0', 'invisible');
+                backToTop.classList.add('opacity-100', 'visible');
+            } else {
+                backToTop.classList.add('opacity-0', 'invisible');
+                backToTop.classList.remove('opacity-100', 'visible');
+            }
+        });
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Contact form submission
+        const contactForm = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Simulate form submission
+            formMessage.classList.remove('hidden', 'bg-red-100', 'text-red-700');
+            formMessage.classList.add('bg-green-100', 'text-green-700');
+            formMessage.innerHTML = '<i class="fas fa-check-circle mr-2"></i>Thank you! Your message has been sent successfully.';
+            
+            // Reset form
+            contactForm.reset();
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                formMessage.classList.add('hidden');
+            }, 5000);
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
